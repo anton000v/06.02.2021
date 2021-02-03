@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06.02.2021</title>
+    <style>
+    body {
+        background-color: black;
+    }
+    h1 {
+        color: white;
+    }
+    
+.ml11 {
+    padding-top: 60px;
+  font-weight: 700;
+  font-size: 2em;
+  text-align: center;
+}
+
+.ml11 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml11 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #fff;
+  transform-origin: 0 50%;
+}
+
+.ml11 .line1 { 
+  top: 0; 
+  left: 0;
+}
+
+.ml11 .letter {
+  display: inline-block;
+  line-height: 1em;
+  opacity: 0;
+
+}
+
+.ml3 {
+    padding-top: 3em;
+  font-weight: 900;
+  font-size: 2em;
+  color: #33ccff;
+  text-align: center;
+}
+
+    </style>
+</head>
+<body>
+
+<h1 class="ml11">
+  <span class="text-wrapper">
+    <span class="line line1"></span>
+    <span class="letters">УЖЕ ОЧЕНЬ БЛИЗКО</span>
+  </span>
+</h1>
+
+<div class="ml3">
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        Едь на самую холодную станцию
+        ...... ЛЮДИ ДОБРЫЕ!!!! Ой! Это же спрятанное поздравление!!!! Этому цветочку ооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооочень (мог бы еще растянуть ахахаха) далеко до тебя, но он старался: &#10048; .....
+        Передам свои поздравления тут словами одного классика ....
+        Ветер провоцирует раны, танец замедляет темп.
+        Снова я в толпу ныряю, будто мне 17 лет.
+        И в метро машусь с типами криво, словно я ослеп.
+        Снова я тебя теряю, будто мне 17 лет! 17 лет.
+
+        Где не бывает невзгод — 17 лет!
+        Весь мир мне заново — 17 лет.
+        Что впереди всё равно -
+        Как это было давно, как это было давно.
+        .... С Днем Рождения, Любимая :)))
+        .... От мотемо4ка &#10084;
+        .... 06.02.2021
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <script>
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml11 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml11 .line',
+    scaleY: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700
+  })
+  .add({
+    targets: '.ml11 .line',
+    translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+    easing: "easeOutExpo",
+    duration: 700,
+    delay: 100
+  }).add({
+    targets: '.ml11 .letter',
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1000,
+    offset: '-=775',
+    delay: (el, i) => 34 * (i+1)
+  });
+
+  // h2
+  // Wrap every letter in a span
+var textWrapper = document.querySelector('.ml3');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+
+
+anime.timeline({loop: false})
+  .add({
+    targets: '.ml3 .letter',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 1000,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    duration: 1500,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+  
+    </script>
+</body>
+</html>
